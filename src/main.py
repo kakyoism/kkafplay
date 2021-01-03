@@ -5,18 +5,15 @@ import wave
 import time
 import sys
 
+wf = None
+
 
 def callback(in_data, frame_count, time_info, status):
     data = wf.readframes(frame_count)
     return data, pyaudio.paContinue
 
 
-if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Plays a wave file.\n\nUsage: %s filename.wav" % sys.argv[0])
-        sys.exit(-1)
-
-    wf = wave.open(sys.argv[1], 'rb')
+def play(wf):
     p = pyaudio.PyAudio()
     stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
                     channels=wf.getnchannels(),
@@ -34,3 +31,12 @@ if __name__ == '__main__':
     wf.close()
 
     p.terminate()
+
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Plays a wave file.\n\nUsage: %s filename.wav" % sys.argv[0])
+        sys.exit(-1)
+
+    wf = wave.open(sys.argv[1], 'rb')
+    play(wf)

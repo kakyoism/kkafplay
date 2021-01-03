@@ -42,4 +42,3 @@ or through [Chocolatey](https://chocolatey.org)
 ```shell
 choco install portaudio
 ```
-
