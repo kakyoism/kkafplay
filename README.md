@@ -2,7 +2,7 @@
 
 A Python-based audio file player with quirky features that you may never need.
 
-Despite its insignificance, it mainly serves as a minimal Python application template that my other Python project could copy from.
+Despite its insignificance, it mainly serves as a minimal Python application template that my other Python projects could copy from.
 
 The template includes the following
 
