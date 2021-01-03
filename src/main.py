@@ -13,11 +13,11 @@ def callback(in_data, frame_count, time_info, status):
     return data, pyaudio.paContinue
 
 
-def play(wf):
+def play(wavefile):
     p = pyaudio.PyAudio()
-    stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
-                    channels=wf.getnchannels(),
-                    rate=wf.getframerate(),
+    stream = p.open(format=p.get_format_from_width(wavefile.getsampwidth()),
+                    channels=wavefile.getnchannels(),
+                    rate=wavefile.getframerate(),
                     output=True,
                     stream_callback=callback)
 
@@ -28,7 +28,7 @@ def play(wf):
 
     stream.stop_stream()
     stream.close()
-    wf.close()
+    wavefile.close()
 
     p.terminate()
 
