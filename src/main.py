@@ -5,8 +5,6 @@ import wave
 import time
 import sys
 
-wf = None
-
 
 def callback(in_data, frame_count, time_info, status):
     data = wf.readframes(frame_count)
