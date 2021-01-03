@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "kkafplay"
+version = "0.1.0"
+description = "A Python-based audio file player with quirky features that you may never need."
+authors = ["Beinan Li <li.beinan@gmail.com>"]
+license = "MIT"
+homepage = ""
+repository = "https://github.com/kakyoism/kkafplay/"
+documentation = "https://github.com/kakyoism/kkafplay/README.md"
+keywords = [
+    "audio",
+    "application",
+    "devops",
+    "ci"
+]
+packages = [
+    { include = "ci" },
+    { include = "src" },
+    { include = "test" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+PyAudio = "^0.2.11"
+kkappkit = "^0.6.4"
+
+[tool.poetry.dev-dependencies]
+pyinstaller = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
