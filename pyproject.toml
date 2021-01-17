@@ -20,7 +20,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 PyAudio = "^0.2.11"
 kkappkit = "^0.6.4"
 
